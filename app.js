@@ -80,7 +80,7 @@ app.use(session({
 app.use(pass.initialize());
 app.use(pass.session());
 
-
+app.get('/')
 
 //passport authentication functions
 app.post('/login',function (req,res,next){
@@ -117,7 +117,7 @@ app.get('/',pass.initialize(),(req,res)=>{
     console.log("redirect")
     //console.log(req.user);
     //res.json(req.user);
-    res.json("Hello");
+    res.json("Big Suck");
 })
 
 app.get('/isLoggedIn',pass.initialize(),checkAuthenticated,(req,res)=>{
