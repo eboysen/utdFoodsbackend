@@ -108,6 +108,7 @@ app.post('/login',function (req,res,next){
         req.login(user,function(err){
             if(err)
                 return next(err);
+            res.cookie(req.user.name,req.user.username,{signed:true});
             return res.status(200).json(req.user);
         });
     }
