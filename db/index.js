@@ -5,7 +5,7 @@ export const pool = new pg.Pool({
     database: "d4m0evl1529etv",
     port: "5432",
     host: "ec2-34-195-69-118.compute-1.amazonaws.com",
-    ssl:{rejectUnauthorized:true}
+    ssl:{rejectUnauthorized:false}
 });
 // export const pool = new pg.Client("postgres://quqktpmt:AAsjtrHgPmF5YbSUklXk_cVEwn3J3Zu7@castor.db.elephantsql.com/quqktpmt");
 
