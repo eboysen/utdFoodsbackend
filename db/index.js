@@ -4,7 +4,7 @@ export const pool = new pg.Pool({
     password:"AAsjtrHgPmF5YbSUklXk_cVEwn3J3Zu7",
     database: "quqktpmt",
     port: "5432",
-    host: "postgres://castor.db.elephantsql.com/quqktpmt ",
+    host: "castor.db.elephantsql.com "
 });
 
 export const db = {
