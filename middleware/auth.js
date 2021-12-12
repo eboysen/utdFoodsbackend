@@ -1,4 +1,5 @@
 export function checkAuthenticated(req,res,next){
+    console.log(req);
     if(req.isAuthenticated()){
         console.log('user is authenticated');
         return next();
