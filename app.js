@@ -118,7 +118,7 @@ app.post('/login',function (req,res,next){
             secure:true,
             httpOnly:false,
             sameSite:'none',
-            domain: 'https://utd-foods.web.app'});
+            domain: 'utd-foods.herokuapp.com'});
             return res.status(200).json(req.user);
         });
     }
