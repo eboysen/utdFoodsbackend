@@ -27,7 +27,7 @@ import setFavorite from './routes/setFavorite.js';
 import removeFavorite from './routes/removeFavorite.js';
 import addGroceryItem from './routes/addGroceryItem.js';
 import { db, pool } from './db/index.js';
-import { CorsRequest } from 'cors';
+import cors from 'cors';
 
 
 
@@ -43,7 +43,7 @@ const routesArray = ['/','/recipe/*','/fiveNew'];
 
 init(pass);
 //CORS Header
-app.use(CorsRequest);
+app.use(cors());
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
