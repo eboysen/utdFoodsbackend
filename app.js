@@ -66,16 +66,6 @@ app.use(function(req, res, next) {
 //express->middleware statements
 app.use(express.json());
 app.use(morganMiddleware);
-app.use(fileUpload({
-    createParentPath:true
-}));
-app.use(flash());
-/*app.use(session({
-    secret:'secret',
-    resave:true,
-    saveUninitialized:true,
-    secure:false
-}));*/
 const pgSession = new ConnectPgSimple(session);
 app.use(session({
     store: new pgSession({
@@ -95,6 +85,17 @@ app.use(session({
         domain: 'https://utd-foods.web.app'
     } 
   }));
+app.use(fileUpload({
+    createParentPath:true
+}));
+app.use(flash());
+/*app.use(session({
+    secret:'secret',
+    resave:true,
+    saveUninitialized:true,
+    secure:false
+}));*/
+
 app.use(pass.initialize());
 //app.use(pass.session());
 
