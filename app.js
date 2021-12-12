@@ -28,7 +28,7 @@ import removeFavorite from './routes/removeFavorite.js';
 import addGroceryItem from './routes/addGroceryItem.js';
 import { db, pool } from './db/index.js';
 import cors from 'cors';
-import { admin } from 'firebase-admin';
+//import { admin } from 'firebase-admin';
 /*
 import serviceAccount from './serviceAccountKey.json';
 
