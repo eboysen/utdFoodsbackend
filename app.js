@@ -114,7 +114,11 @@ app.post('/login',function (req,res,next){
             if(err)
                 return next(err);
             console.log("USER AT LOG"+req.user);
-            res.cookie('sessionID',req.sessionID,{sameSite:'none'});
+            res.cookie('sessionID',req.sessionID,{maxAge: 10 * 60 * 1000, // 10 minutes
+            secure:true,
+            httpOnly:false,
+            sameSite:'none',
+            domain: 'https://utd-foods.web.app'});
             return res.status(200).json(req.user);
         });
     }
