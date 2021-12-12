@@ -114,7 +114,7 @@ app.post('/login',function (req,res,next){
             if(err)
                 return next(err);
             console.log("USER AT LOG"+req.user);
-            res.send(req.session.id);
+            return res.send(req.session.id);
             return res.status(200).json(req.user);
         });
     }
