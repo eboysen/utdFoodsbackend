@@ -28,7 +28,14 @@ import removeFavorite from './routes/removeFavorite.js';
 import addGroceryItem from './routes/addGroceryItem.js';
 import { db, pool } from './db/index.js';
 import cors from 'cors';
+import { admin } from 'firebase-admin';
+import serviceAccount from './serviceAccountKey.json';
 
+const BUCKET_URL = "gs://utd-foods.appspot.com";
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  storageBucket: BUCKET_URL
+});
 
 
 
@@ -77,7 +84,11 @@ app.use(session({
     }),
     secret: 'secret',
     resave: false,
-    cookie: { maxAge: 10 * 60 * 1000 } // 10 minutes
+    cookie: { 
+        maxAge: 10 * 60 * 1000, // 10 minutes
+        secure:true,
+        httpOnly:false
+    } 
   }));
 app.use(pass.initialize());
 app.use(pass.session());

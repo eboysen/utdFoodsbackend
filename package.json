@@ -23,6 +23,7 @@
     "express-fileupload": "^1.2.1",
     "express-flash": "0.0.2",
     "express-session": "^1.17.2",
+    "firebase-admin": "^10.0.0",
     "local": "^0.3.3",
     "memorystore": "^1.6.6",
     "morgan": "^1.10.0",
