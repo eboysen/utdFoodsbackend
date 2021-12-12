@@ -89,7 +89,7 @@ app.use(session({
         maxAge: 10 * 60 * 1000, // 10 minutes
         secure:true,
         httpOnly:false,
-        path: '/'
+        sameSite:'none'
     } 
   }));
 app.use(pass.initialize());
