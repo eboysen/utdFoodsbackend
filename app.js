@@ -27,6 +27,7 @@ import setFavorite from './routes/setFavorite.js';
 import removeFavorite from './routes/removeFavorite.js';
 import addGroceryItem from './routes/addGroceryItem.js';
 import { db, pool } from './db/index.js';
+import { CorsRequest } from 'cors';
 
 
 
@@ -42,8 +43,9 @@ const routesArray = ['/','/recipe/*','/fiveNew'];
 
 init(pass);
 //CORS Header
+app.use(CorsRequest);
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://utd-foods.web.app"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
     res.header("Access-Control-Allow-Credentials", "true");
     res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
