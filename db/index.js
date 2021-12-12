@@ -1,10 +1,10 @@
 import pg from "pg";
 export const pool = new pg.Pool({
-    user:"me",
-    password:"password",
-    database: "recipes",
+    user:"quqktpmt",
+    password:"nh-3VNjSBl_KU5DIIW0mifvJLNt32qPb",
+    database: "quqktpmt",
     port: "5432",
-    host: "localhost",
+    host: "postgres://quqktpmt:nh-3VNjSBl_KU5DIIW0mifvJLNt32qPb@castor.db.elephantsql.com/quqktpmt",
 });
 
 export const db = {
