@@ -29,6 +29,7 @@ import addGroceryItem from './routes/addGroceryItem.js';
 import { db, pool } from './db/index.js';
 import cors from 'cors';
 import { admin } from 'firebase-admin';
+/*
 import serviceAccount from './serviceAccountKey.json';
 
 const BUCKET_URL = "gs://utd-foods.appspot.com";
@@ -36,7 +37,7 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   storageBucket: BUCKET_URL
 });
-
+*/
 
 
 //set up express and set port number
