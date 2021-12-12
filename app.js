@@ -84,12 +84,14 @@ app.use(session({
       // Insert connect-pg-simple options here
     }),
     secret: 'secret',
-    resave: false,
+    resave: true,
+    saveUninitialized: true,
+    secure:true,
     cookie: { 
         maxAge: 10 * 60 * 1000, // 10 minutes
         secure:true,
         httpOnly:false,
-        sameSite:'none'
+        sameSite:'none',
     } 
   }));
 app.use(pass.initialize());
