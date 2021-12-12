@@ -34,7 +34,7 @@ import cors from 'cors';
 
 //set up express and set port number
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const pass = passport;
 const SessionStore = new MemoryStore({
     checkPeriod: 86400000
