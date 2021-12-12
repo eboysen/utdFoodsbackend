@@ -85,17 +85,18 @@ app.use(session({
     }),
     secret: 'secret',
     resave: true,
-    saveUninitialized: true,
-    secure:true,
+    saveUninitialized: false,
+    secure:false,
     cookie: { 
         maxAge: 10 * 60 * 1000, // 10 minutes
         secure:true,
         httpOnly:false,
         sameSite:'none',
+        domain: 'https://utd-foods.web.app'
     } 
   }));
 app.use(pass.initialize());
-app.use(pass.session());
+//app.use(pass.session());
 
 app.get('/')
 
