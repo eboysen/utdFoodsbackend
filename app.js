@@ -88,7 +88,8 @@ app.use(session({
     cookie: { 
         maxAge: 10 * 60 * 1000, // 10 minutes
         secure:true,
-        httpOnly:false
+        httpOnly:false,
+        path: '/'
     } 
   }));
 app.use(pass.initialize());
@@ -109,7 +110,6 @@ app.post('/login',function (req,res,next){
             if(err)
                 return next(err);
             console.log("USER AT LOG"+req.user);
-            res.cookie(req.user.name,req.user.username,{sameSite:None});
             return res.status(200).json(req.user);
         });
     }
